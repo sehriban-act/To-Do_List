@@ -42,7 +42,7 @@ function newElement() {
     li.appendChild(t);
     document.getElementById("myUL").appendChild(li);
     tasksList.push(`${li.innerText}`);
-    // console.log(tasksList);
+    console.log(tasksList);
     var addList=tasksList.length;
 var totalNum=document.getElementById("display");
     console.log(addList);
@@ -77,20 +77,19 @@ var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
-    numList.push('checked');
+    numList.push(ev.target.innerText);
+    console.log(numList);
     var checkedNum=numList.length;
     console.log(checkedNum);
     
 //  var checkedNum=document.getElementById("display").innerText;
 // 
-var x=document.getElementsByClassName('checked');
-x.innerHTML=`${checkedNum}`;
-console.log(x.innerText);
- 
-
- 
+var x=document.getElementById('tick');
+console.log(x);
+x.innerHTML=checkedNum;
  
   }
+ 
  
 }, false);
 
