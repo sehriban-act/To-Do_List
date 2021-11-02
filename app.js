@@ -72,58 +72,34 @@ totalNum.innerText=addList;
   }
    
 }
-var numList=[];
+// //var numList = [];
+let deletedTask = 0;
 var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-    numList.push(ev.target.innerText);
-    console.log(numList);
-    var checkedNum=numList.length;
-    console.log(checkedNum);
-    
-//  var checkedNum=document.getElementById("display").innerText;
-// 
-var x=document.getElementById('tick');
-console.log(x);
-x.innerHTML=checkedNum;
- 
-  }
- 
- 
-}, false);
-
+list.addEventListener('click',function (ev) {
+    if (ev.target.tagName === 'LI' && ev.target.className !== 'checked') {
+      ev.target.classList.add('checked');
+      deletedTask++;
+    }
+      else{
+      ev.target.classList.remove('checked');
+      deletedTask--;
+      }
+      //numList.push(ev.target.innerText);
+      //console.log(numList);
+      //var checkedNum = numList.length;
+      //console.log(checkedNum);
+      //  var checkedNum=document.getElementById("display").innerText;
+      var x = document.getElementById('tick');
+      //console.log(x);
+      x.innerHTML = deletedTask;
+  },
+  false
+);
 
 
 //--- add butonu---
 var btn = document.getElementById("btn");
 btn.addEventListener("click", newElement);
-
-//----girilen task sayisini gosterir
-// var count = 0;
-// var disp = document.getElementById("display");
-
-	
-// //---- task sayisini azaltir x tusuna basinca
-// for (i = 0; i < close.length; i++) {
-//   close[i].onclick = function() {
-    
-//     var disp = document.getElementById("display");
-//     count--;
-//     disp.innerHTML = count;
-
-//   }
-// }
-
-//     //---tamamlanan task sayisi
-//    var clicks=0;
-//     function checked(){
-//       clicks++;
-//     }
-//     var list = document.querySelector('li');
-//     // list.addEventListener('click',checked);
-//     document.getElementsByClassName('checked').innerHTML = clicks;
-    
 
     
     
